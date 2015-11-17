@@ -41,7 +41,7 @@ class SeekersController < ApplicationController
 
   private
     def seeker_params
-      params.require(:seeker).permit(:first_name, :last_name, :bio)
+      params.require(:seeker).permit(:first_name, :last_name, :gender, :photo_url, :city, :email, :phone_number, :bio , :user_id)
     end
 
 end
