@@ -1,0 +1,16 @@
+Create Seeker
+
+<% form_for :seeker, method: :post do |f| %>
+
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %>
+
+    <%= f.submit %>
+
+<% end %>
+
+<%= link_to "Back", seekers_path %>
+test

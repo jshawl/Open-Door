@@ -1,1 +1,9 @@
-Seekers Index
+<h1>Seekers</h1>
+
+<%= link_to "Create New Seeker", new_seeker_path %>
+
+<% @seekers.each do |seeker| %>
+  <p>
+    <%= link_to seeker.first_name, seeker %>
+  </p>
+<% end %>
