@@ -17,21 +17,27 @@ ActiveRecord::Schema.define(version: 20151116203924) do
   enable_extension "plpgsql"
 
   create_table "providers", force: :cascade do |t|
-    t.string "name"
-    t.string "photo_url"
-    t.string "city"
-    t.string "email"
-    t.string "phone_number"
-    t.text   "bio"
+    t.string  "organization_name"
+    t.string  "POC_first_name"
+    t.string  "POC_last_name"
+    t.string  "photo_url"
+    t.string  "city"
+    t.string  "email"
+    t.string  "phone_number"
+    t.text    "bio"
+    t.integer "user_id"
   end
 
   create_table "seekers", force: :cascade do |t|
-    t.string "name"
-    t.string "photo_url"
-    t.string "city"
-    t.string "email"
-    t.string "phone_number"
-    t.text   "bio"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "gender"
+    t.string  "photo_url"
+    t.string  "city"
+    t.string  "email"
+    t.string  "phone_number"
+    t.text    "bio"
+    t.integer "user_id"
   end
 
 end
