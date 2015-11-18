@@ -20,13 +20,15 @@ seekers = []
                 }))
 end
 
-binding.pry
-
-# organization_name
-# photo_url
-# city
-# POC_first_name
-# POC_last_name
-# email
-# phone_number
-# bio
+providers = []
+20.times do |i|
+  providers.push(Provider.create!({organization_name: Forgery('name').company_name,
+                photo_url: Forgery('internet').domain_name,
+                city: Forgery('address').city,
+                POC_first_name: Forgery('name').first_name,
+                POC_last_name: Forgery('name').last_name,
+                email: Forgery('internet').email_address,
+                phone_number: Forgery('address').phone,
+                bio: Forgery('lorem_ipsum').paragraph,
+                }))
+end

@@ -20,10 +20,14 @@
     </div>
   </nav>
 
+<%= link_to "Home", root_path %>
+<%= link_to "Providers", providers_path %>
+<%= link_to "Seekers", seekers_path %>
+
 <%= yield %>
 
 <br>
-<%= link_to "Home", root_path %>
+
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
