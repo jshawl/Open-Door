@@ -1,0 +1,9 @@
+<h1>providers</h1>
+
+<%= link_to "Create New Provider", new_provider_path %>
+
+<% @providers.each do |provider| %>
+  <p>
+    <%= link_to provider.organization_name, provider %>
+  </p>
+<% end %>

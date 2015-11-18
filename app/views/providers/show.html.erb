@@ -1,0 +1,26 @@
+<p>
+  <strong>Name:</strong>
+  <%= @provider.organization_name.to_s %>
+</p>
+
+| Organization | <%= @provider.organization_name%> <br>
+| Photo | <%= @provider.photo_url%> <br>
+          <%= image_tag @provider.photo_url %><br>
+| City | <%= @provider.city%> <br>
+| POC First Name | <%= @provider.POC_first_name%> <br>
+| POC Last Name | <%= @provider.POC_last_name%> <br>
+| Email | <%= @provider.email%> <br>
+| Phone | <%= @provider.phone_number%> <br>
+| Bio | <%= @provider.bio%> <br>
+
+
+
+
+
+
+
+
+
+
+<%= link_to "Edit", edit_provider_path(@provider) %> <br>
+<%= link_to "All Providers", providers_path %>
