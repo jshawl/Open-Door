@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "seekers#index"
+  root to: "welcome#index"
   resources :seekers
   resources :providers
 

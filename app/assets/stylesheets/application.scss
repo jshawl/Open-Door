@@ -14,8 +14,13 @@
  *= require_self
  */
 
- body {
+body {
    background-color: rgb(196, 142, 238);
    color: green;
    /*font-size: 3em;*/
  }
+
+.user-info {
+  text-align: right;
+  background-color: white;
+}
