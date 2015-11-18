@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117233420) do
+ActiveRecord::Schema.define(version: 20151118205230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "postings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "timeframe"
+    t.string   "pay"
+    t.integer  "provider_id"
+    t.integer  "seeker_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "postings", ["provider_id"], name: "index_postings_on_provider_id", using: :btree
+  add_index "postings", ["seeker_id"], name: "index_postings_on_seeker_id", using: :btree
 
   create_table "providers", force: :cascade do |t|
     t.string  "organization_name"
@@ -58,4 +72,6 @@ ActiveRecord::Schema.define(version: 20151117233420) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "postings", "providers"
+  add_foreign_key "postings", "seekers"
 end
