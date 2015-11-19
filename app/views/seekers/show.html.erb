@@ -1,13 +1,9 @@
 <p>
   <strong>Name:</strong>
-  <%= @seeker.first_name.to_s + @seeker.last_name.to_s %>
+  <%= @seeker.first_name.to_s + " " + @seeker.last_name.to_s %>
 </p>
 
-| First Name | <%= @seeker.first_name%> <br>
-| Last Name | <%= @seeker.last_name%>   <br>
-| Gender | <%= @seeker.gender%> <br>
-| Photo | <%= @seeker.photo_url%><br>
-          <%= image_tag @seeker.photo_url %><br>
+<%= image_tag @seeker.photo_url %><br>
 | City | <%= @seeker.city%> <br>
 | Email | <%= @seeker.email%> <br>
 | Phone | <%= @seeker.phone_number%> <br>

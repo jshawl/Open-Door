@@ -8,7 +8,13 @@
 
 
 seekers = []
+userSeekers = []
 20.times do |i|
+  @user = User.create!({email: Forgery('internet').email_address,
+                :password => 'password',
+                :password_confirmation => 'password'
+                })
+  userSeekers.push(@user)
   seekers.push(Seeker.create!({first_name: Forgery('name').first_name,
                 last_name: Forgery('name').last_name,
                 gender: Forgery('personal').abbreviated_gender,
@@ -17,13 +23,18 @@ seekers = []
                 email: Forgery('internet').email_address,
                 phone_number: Forgery('address').phone,
                 bio: Forgery('lorem_ipsum').paragraph,
+                user_id: @user.id,
                 }))
 end
 
 providers = []
+userProviders = []
 20.times do |i|
-  # create user in here, assign to variable, and then use below
-  
+  @user = User.create!({email: Forgery('internet').email_address,
+                :password => 'password',
+                :password_confirmation => 'password'
+                })
+  userProviders.push(@user)
   providers.push(Provider.create!({organization_name: Forgery('name').company_name,
                 photo_url: "http://lorempixel.com/400/200/technics/",
                 city: Forgery('address').city,
@@ -32,10 +43,22 @@ providers = []
                 email: Forgery('internet').email_address,
                 phone_number: Forgery('address').phone,
                 bio: Forgery('lorem_ipsum').paragraph,
-                #user: user,
+                user_id: @user.id,
                 }))
 end
 
+postings = []
+60.times do
+  @random_provider = Provider.all.sample
+  postings.push(Posting.create!({title: Forgery('name').job_title,
+                description: Forgery('lorem_ipsum').paragraph,
+                timeframe: Forgery('date').date,
+                pay: Forgery('monetary').formatted_money,
+                provider_id: @random_provider.id
+                }))
+end
+
+binding.pry
 
 ## create interests rows for join table
 ## adjust to create a posting - and then pick a random set of seekers
