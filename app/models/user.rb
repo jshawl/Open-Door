@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :providers
-  has_many :seekers
+  has_one :provider
+  has_one :seeker
+
+  def is_provider?
+    Provider.exists? user: self
+  end
+
+  # def provider
+  #   @provider = Provider.find_by(user: self)
+  # end
 end

@@ -7,5 +7,5 @@
 | Timeframe | <%= @posting.timeframe%><br>
 | Pay | <%= @posting.pay%><br>
 
-<%= link_to "Edit", edit_provider_posting_path %> <br>
+<%= link_to "Edit", edit_posting_path(@posting) %> <br>
 <%= link_to "Back to All Postings", postings_path %>

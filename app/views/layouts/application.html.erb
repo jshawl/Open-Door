@@ -26,6 +26,8 @@
 <%= link_to "Providers", providers_path %>
 <%= link_to "Seekers", seekers_path %>
 
+<%= link_to("Create New Posting", new_provider_posting_path(current_user.provider)) if current_user && current_user.is_provider? %>
+
 <%= yield %>
 
 <br>

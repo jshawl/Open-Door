@@ -1,6 +1,11 @@
 class PostingsController < ApplicationController
   def index
-    @postings=Posting.all
+    if params[:provider_id]
+      @provider = Provider.find(params[:provider_id])
+      @postings = @provider.postings
+    else
+      @postings=Posting.all
+    end
   end
   def show
     @posting=Posting.find(params[:id])
@@ -12,11 +17,10 @@ class PostingsController < ApplicationController
   def create
     @provider = Provider.find(params[:provider_id])
     @posting = @provider.postings.create!(posting_params)
-    redirect_to provider_posting_path
+    redirect_to posting_path(@posting)
   end
   def edit
-    @provider = Provider.find(params[:provider_id])
-    @posting = Posting.find(params[:id])
+    @posting = current_user.provider.postings.find(params[:id])
   end
   def update
     @provider = Provider.find(params[:provider_id])
@@ -25,10 +29,9 @@ class PostingsController < ApplicationController
     redirect_to provider_path(@provider)
   end
   def destroy
-    @provider = Provider.find(params[:provider_id])
-    @posting = Posting.find(params[:id])
+    @posting = current_user.provider.postings.find(params[:id])
     @posting.destroy
-    redirect_to provider_path(@provider)
+    redirect_to provider_path(current_user.provider)
   end
   private
   def posting_params

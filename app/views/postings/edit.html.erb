@@ -1,4 +1,4 @@
 <h1> Edit Posting </h1>
 
 <%= render "form" %>
-<%= link_to "Delete This Posting", provider_posting_path, method: :delete, class: "delete" %>
+<%= link_to "Delete This Posting", posting_path(@posting), method: :delete, class: "delete" %>

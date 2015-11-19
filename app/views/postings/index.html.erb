@@ -1,9 +1,7 @@
 <h1>Postings</h1>
 
-<%= link_to "Create New Posting", new_provider_posting_path %>
-
 <% @postings.each do |posting| %>
   <p>
-    <%= posting.title %>
+    <%= "#{posting.title}  -  #{posting.provider_id}" %>
   </p>
 <% end %>
