@@ -23,8 +23,7 @@ end
 providers = []
 20.times do |i|
   # create user in here, assign to variable, and then use below
-
-
+  
   providers.push(Provider.create!({organization_name: Forgery('name').company_name,
                 photo_url: "http://lorempixel.com/400/200/technics/",
                 city: Forgery('address').city,
