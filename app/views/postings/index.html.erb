@@ -2,6 +2,6 @@
 
 <% @postings.each do |posting| %>
   <p>
-    <%= "#{posting.title}  -  #{posting.provider_id}" %>
+    <%= link_to "#{posting.title}  -  #{posting.provider_id}", posting %>
   </p>
 <% end %>

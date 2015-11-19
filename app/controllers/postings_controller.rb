@@ -15,7 +15,7 @@ class PostingsController < ApplicationController
     @posting = @provider.postings.new
   end
   def create
-    @provider = Provider.find(params[:provider_id])
+    @provider = current_user.provider
     @posting = @provider.postings.create!(posting_params)
     redirect_to posting_path(@posting)
   end
