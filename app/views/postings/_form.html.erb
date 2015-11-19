@@ -1,11 +1,7 @@
-<%= form_for @posting, :url => provider_postings_path do |f| %>
-
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+<%= simple_form_for @posting, :url => provider_postings_path do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :timeframe %>
+  <%= f.input :pay %>
+  <%= f.button :submit %>
 <% end %>

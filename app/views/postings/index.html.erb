@@ -3,5 +3,7 @@
 <%= link_to "Create New Posting", new_provider_posting_path %>
 
 <% @postings.each do |posting| %>
-  <%= posting.title %>
+  <p>
+    <%= posting.title %>
+  </p>
 <% end %>

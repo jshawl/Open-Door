@@ -12,7 +12,7 @@ class PostingsController < ApplicationController
   def create
     @provider = Provider.find(params[:provider_id])
     @posting = @provider.postings.create!(posting_params)
-    redirect_to provider_path(@provider)
+    redirect_to provider_posting_path
   end
   def edit
     @provider = Provider.find(params[:provider_id])

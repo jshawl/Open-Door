@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :providers do
     resources :postings
   end
+  resources :postings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
