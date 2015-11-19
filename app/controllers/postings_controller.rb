@@ -11,7 +11,8 @@ class PostingsController < ApplicationController
   end
   def create
     @provider = Provider.find(params[:provider_id])
-    @posting = @provider.postings.create!
+    @posting = @provider.postings.create!(posting_params)
+    redirect_to provider_path(@provider)
   end
   def edit
     @provider = Provider.find(params[:provider_id])
@@ -31,7 +32,7 @@ class PostingsController < ApplicationController
   end
   private
   def posting_params
-    params.require(:posting).permit(:body)
+    params.require(:posting).permit(:title, :description, :timeframe, :pay)
   end
 
 end
