@@ -7,8 +7,8 @@ class CreatePostings < ActiveRecord::Migration
       t.string :pay
 
       t.references :provider, index: true, foreign_key: true
-      t.references :seeker, index: true, foreign_key: true
-
+      #t.references :seeker, index: true, foreign_key: true
+  
       t.timestamps null: false
     end
   end
