@@ -58,7 +58,6 @@ postings = []
                 }))
 end
 
-binding.pry
 
 ## create interests rows for join table
 ## adjust to create a posting - and then pick a random set of seekers
