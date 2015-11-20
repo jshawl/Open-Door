@@ -1,7 +1,7 @@
 # Open-Door
 Purpose: Open Door aims to connect non-standard job-seekers & the employers who need them.
 
-link to heroku - 
+link to heroku - https://open-door-dc.herokuapp.com/postings
 
 **Technologies Used**
 - Ruby on Rails
