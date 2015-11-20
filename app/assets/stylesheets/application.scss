@@ -100,17 +100,22 @@
   display: inline;
 }
 
-.left {
+.yield {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+div.col-md-3 .left {
   display: inline-block;
   width: 15%;
 }
 
-.center {
+div.col-md-3 .center {
   display: inline-block;
   width: 35%;
 }
 
-.right {
+div.col-md-3 .right {
   display: inline-block;
   width: 50%;
 }

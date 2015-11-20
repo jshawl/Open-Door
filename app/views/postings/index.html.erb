@@ -1,9 +1,16 @@
-<h1>Postings</h1>
+<h3>Postings</h3>
+
+<%= link_to "Create New Posting", new_posting_path %><br>
+
+<div class="row">
+  <div class="col-md-4"><strong>Posting</strong></div>
+  <div class="col-md-4"><strong>Timeframe</strong></div>
+</div>
 
 <% @postings.each do |posting| %>
   <p>
-    <%= link_to "#{posting.title}", posting %>
-    <%= "#{posting.timeframe}"%> <br>
-    <%= "#{posting.description}"%>
-  </p>
+    <div class="col-md-4"><%= link_to "#{posting.title}", posting %></div>
+    <div class="col-md-4"><%= "#{posting.timeframe}"%></div>
+    <div class="col-md-12"><%= "#{posting.description}"%></div><br>
+  </p><br>
 <% end %>

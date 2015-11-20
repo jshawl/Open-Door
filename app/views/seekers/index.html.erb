@@ -1,11 +1,17 @@
-<h1>Seekers</h1>
+<h3>Seekers</h3>
 
 <%= link_to "Create New Seeker", new_seeker_path %>
 
+<div class="row">
+  <div class="col-md-4"><strong>Seeker</strong></div>
+  <div class="col-md-4"><strong>City</strong></div>
+  <div class="col-md-4"><strong>Email</strong></div>
+</div>
+
 <% @seekers.each do |seeker| %>
   <p>
-    <%= link_to seeker.first_name, seeker %>
-    <%= "#{seeker.city}"%>
-    <%= "#{seeker.email}"%>
-  </p>
+    <div class="col-md-4"><%= link_to seeker.first_name, seeker %></div>
+    <div class="col-md-4"><%= "#{seeker.city}"%></div>
+    <div class="col-md-4"><%= "#{seeker.email}"%></div>
+  </p> <br>
 <% end %>

@@ -1,11 +1,17 @@
-<h1>Providers</h1>
+<h3>Providers</h3>
 
 <%= link_to "Create New Provider", new_provider_path %><br>
 
+<div class="row">
+  <div class="col-md-4"><strong>Provider</strong></div>
+  <div class="col-md-4"><strong>City</strong></div>
+  <div class="col-md-4"><strong>Email</strong></div>
+</div>
+
 <% @providers.each do |provider| %>
   <div class = "index-provider">
-    <span class = "left"><%= link_to provider.organization_name, provider %></span>
-    <span class = "center"><%= "#{provider.city}"%></span>
-    <span class = "right"><%= "#{provider.email}"%></span>
+    <div class="col-md-4"><%= link_to provider.organization_name, provider %></div>
+    <div class="col-md-4"><%= "#{provider.city}"%></div>
+    <div class="col-md-4"><%= "#{provider.email}"%></div>
   </div> <br>
 <% end %>
