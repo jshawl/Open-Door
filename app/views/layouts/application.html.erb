@@ -9,6 +9,16 @@
 <body>
 
   <nav>
+    <div class="nav-info">
+      <%= link_to "Home", root_path %>
+      <%= link_to "Providers", providers_path %>
+      <%= link_to "Seekers", seekers_path %>
+      <%= link_to "Postings", postings_path %><br>
+      <%= link_to("Create New Posting", new_provider_posting_path(current_user.provider)) if current_user && current_user.is_provider? %>
+    </div>
+  </nav>
+
+  <nav>
     <div class="user-info">
       <% if current_user %>
         Current User: <%= current_user.email %>
@@ -22,11 +32,7 @@
 
 <h1 class='logo'><%= link_to "Home", root_path %></h1>
 
-<%= link_to "Home", root_path %>
-<%= link_to "Providers", providers_path %>
-<%= link_to "Seekers", seekers_path %>
-
-<%= link_to("Create New Posting", new_provider_posting_path(current_user.provider)) if current_user && current_user.is_provider? %>
+<h1> Open Door </h1>
 
 <%= yield %>
 

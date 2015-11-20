@@ -3,6 +3,8 @@
   <%= @provider.organization_name.to_s %>
 </p>
 
+<%= link_to "Postings from this Provider", provider_postings_path(@provider) %> <br>
+
 <%= image_tag @provider.photo_url %><br>
 | City | <%= @provider.city%> <br>
 | Contact | <%= @provider.POC_first_name + " " + @provider.POC_last_name%> <br>

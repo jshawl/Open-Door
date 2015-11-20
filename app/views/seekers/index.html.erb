@@ -5,5 +5,7 @@
 <% @seekers.each do |seeker| %>
   <p>
     <%= link_to seeker.first_name, seeker %>
+    <%= "#{seeker.city}"%>
+    <%= "#{seeker.email}"%>
   </p>
 <% end %>

@@ -3,9 +3,9 @@
   <%= @posting.title.to_s %>
 </p>
 
-| Description | <%= @posting.description%><br>
-| Timeframe | <%= @posting.timeframe%><br>
-| Pay | <%= @posting.pay%><br>
+<em>Description: </em><%= @posting.description%><br>
+<em>Timeframe: </em><%= @posting.timeframe%><br>
+<em>Pay: </em><%= @posting.pay%><br><br>
 
 <%= link_to "Edit", edit_posting_path(@posting) %> <br>
 <%= link_to "Back to All Postings", postings_path %>
