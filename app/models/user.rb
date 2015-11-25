@@ -9,9 +9,7 @@ class User < ActiveRecord::Base
 
   def is_provider?
     Provider.exists? user: self
+    # :+1+
   end
 
-  # def provider
-  #   @provider = Provider.find_by(user: self)
-  # end
 end

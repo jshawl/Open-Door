@@ -22,7 +22,10 @@ userSeekers = []
                 city: Forgery('address').city,
                 email: Forgery('internet').email_address,
                 phone_number: Forgery('address').phone,
-                bio: Forgery('lorem_ipsum').paragraph,
+                bio: Forgery('lorem_ipsum').paragraph, # in your video
+		# you mentioned "need help with lawn"
+		# I recommend replacing lorem ipsum with those types of description
+		# even if manually to convey your app idea better
                 user_id: @user.id,
                 }))
 end
@@ -35,16 +38,17 @@ userProviders = []
                 :password_confirmation => 'password'
                 })
   userProviders.push(@user)
-  providers.push(Provider.create!({organization_name: Forgery('name').company_name,
-                photo_url: "http://lorempixel.com/400/200/technics/",
-                city: Forgery('address').city,
-                POC_first_name: Forgery('name').first_name,
-                POC_last_name: Forgery('name').last_name,
-                email: Forgery('internet').email_address,
-                phone_number: Forgery('address').phone,
-                bio: Forgery('lorem_ipsum').paragraph,
-                user_id: @user.id,
-                }))
+  providers.push(Provider.create!({
+    organization_name: Forgery('name').company_name,
+    photo_url: "http://lorempixel.com/400/200/technics/",
+    city: Forgery('address').city,
+    POC_first_name: Forgery('name').first_name,
+    POC_last_name: Forgery('name').last_name,
+    email: Forgery('internet').email_address,
+    phone_number: Forgery('address').phone,
+    bio: Forgery('lorem_ipsum').paragraph,
+    user_id: @user.id,
+  }))
 end
 
 postings = []
@@ -61,6 +65,7 @@ end
 
 ## create interests rows for join table
 ## adjust to create a posting - and then pick a random set of seekers
+# remove commented out code
 # 20.times do
 #   # create new Interests
 #   random_seeker = Seeker.all.sample

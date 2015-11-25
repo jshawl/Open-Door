@@ -21,10 +21,13 @@ ActiveRecord::Schema.define(version: 20151118205230) do
     t.string   "description"
     t.string   "timeframe"
     t.string   "pay"
-    t.integer  "provider_id"
+    t.integer  "provider_id" # how could you let seekers post, too?
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  # a next feature could be allowing both providers and seekers to
+  # comment on posts or message each other
 
   add_index "postings", ["provider_id"], name: "index_postings_on_provider_id", using: :btree
 

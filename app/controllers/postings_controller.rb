@@ -9,6 +9,7 @@ class PostingsController < ApplicationController
   end
   def show
     @posting=Posting.find(params[:id])
+    # could move this to a before_action to set the instance variable and DRY up your code.
   end
   def new
     @provider = Provider.find(params[:provider_id])
@@ -30,6 +31,7 @@ class PostingsController < ApplicationController
   end
   def destroy
     @posting = current_user.provider.postings.find(params[:id])
+    # excellent ^^ !
     @posting.destroy
     redirect_to provider_path(current_user.provider)
   end
